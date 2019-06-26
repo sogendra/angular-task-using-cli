@@ -1,3 +1,12 @@
-<task-core></task-core>
-<task-sidebar [menuData]="sideBar" ></task-sidebar>
+<onehr-loader></onehr-loader>
+<!-- <onehr-topbar [topbarMenu]="topbar" [loginButton]="loginButton" ></onehr-topbar> -->
+<onehr-topbar></onehr-topbar>
+<div>
+    <aside>
+        <task-sidebar [menuData]="sideBar" ></task-sidebar>
+    </aside> 
+</div>
 
+<main>
+    <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,97 @@
+<!-- Employee list  -->
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table mb-0" *ngIf="employees && employees.length">
+        <thead>
+          <tr>
+            <th>First Name &nbsp;&nbsp;<i class="fa fa-sort" aria-hidden="true"
+                (click)="changeSortingOrder('firstName',order)"></i></th>
+            <th>Last Name &nbsp;&nbsp;<i class="fa fa-sort" aria-hidden="true"
+                (click)="changeSortingOrder('lastName',order)"></i></th>
+            <th>Email &nbsp;&nbsp;<i class="fa fa-sort" aria-hidden="true"
+                (click)="changeSortingOrder('email',order)"></i></th>
+            <th>Phone &nbsp;&nbsp;<i class="fa fa-sort" aria-hidden="true"
+                (click)="changeSortingOrder('phone',order)"></i></th>
+            <th>Designation &nbsp;&nbsp;<i class="fa fa-sort" aria-hidden="true"
+                (click)="changeSortingOrder('designation',order)"></i></th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let employee of employees | paginate:{ itemsPerPage: itemsPerPage, currentPage: page, totalItems: totalRec } ">
+            <td><a [routerLink]="[employee.id]">{{employee.firstName}}</a></td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.designation}}</td>
+            <td>
+              <button class="btn btn-outline-primary btn-sm" [routerLink]="['/emp', employee.id, 'edit']"
+                [queryParams]="{page: page}">
+                Edit
+              </button>&nbsp;&nbsp;
+              <button class="btn btn-outline-primary btn-sm" (click)="deleteEmployee(employee.id)">Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<br />
+<div class="list">
+  <pagination-controls (pageChange)="pageChange($event)"></pagination-controls>
+</div>
+
+<!-- Search form  -->
+<div class="card">
+  <div class="card-header">
+    Filter
+  </div>
+  <div class="card-body">
+    <form novalidate (ngSubmit)="filterEmployee()" [formGroup]="searchForm">
+
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <input class="form-control" type="text" placeholder="First Name" formControlName="firstName" />
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <input class="form-control" type="text" placeholder="Last Name" formControlName="lastName" />
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <input class="form-control" type="text" placeholder="Email" formControlName="email" />
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <input class="form-control" type="text" placeholder="Phone" formControlName="phone" />
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <input class="form-control" type="text" placeholder="Designation" formControlName="designation" />
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3" type="submit" style="width:80px">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

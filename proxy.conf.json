@@ -1,0 +1,10 @@
+{
+    "/employees":{
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/languages":{
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}
