@@ -38,7 +38,7 @@ export class CreateEmployeeComponent implements OnInit {
   /**
    * Dropdown list of create employee component.
    */
-  private dropdownList: any[];
+  public dropdownList: any[];
 
   constructor(
     private formBuilder: FormBuilder,

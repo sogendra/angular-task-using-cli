@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+/**---------------------------------------------------------------------- */
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './login/auth.guard';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { AuthHeaderInterceptor } from './auth-header.interceptor';
 import { LoaderInterceptor } from './loader/loader.interceptor';
-/**---------------------------------------------------------------------- */
 
 const appRoutes: Routes = [
     {

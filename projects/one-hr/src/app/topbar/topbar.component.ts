@@ -16,7 +16,7 @@ export class TopbarComponent implements OnInit {
   /**
    * Page title of topbar component
    */
-  private pageTitle = 'OneHr';
+  public pageTitle = 'OneHr';
 
   constructor(private authService: AuthService,
     private router: Router) { }
@@ -27,14 +27,14 @@ export class TopbarComponent implements OnInit {
   /**
    * Gets whether user is logged in
    */
-  private get isLoggedIn(): boolean {
+  public get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
 
   /**
    * Gets user name
    */
-  private get userName(): string {
+  public get userName(): string {
     if (this.authService.currentUser) {
       return this.authService.currentUser.userName;
     }
