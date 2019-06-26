@@ -1,0 +1,5 @@
+<div id="mySidenav" class="sidenav">
+  <a class="sidenav-link" *ngFor="let menu of menuData" [routerLink]="menu.path" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{ exact : true}">{{menu.routeName}}</a>
+</div>
+
