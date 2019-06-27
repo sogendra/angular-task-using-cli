@@ -6,13 +6,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 /**---------------------------------------------------------------------- */
 import { Language } from './language.model';
+import { environment } from 'projects/one-hr/src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class LanguageService {
 
-    private baseUrl: string = "/languages";
+    private baseUrl: string = environment.languagesBaseUrl;
 
     constructor(private httpClient: HttpClient) { }
 

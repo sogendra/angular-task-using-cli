@@ -6,15 +6,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 /**---------------------------------------------------------------------- */
 import { Employee } from './employee.model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class EmployeeService {
+  
   public page: number;
   public itemsPerPage: number;
   public order: string;
   public sortField: string;
 
-  private baseUrl: string = '/employees';
+  private baseUrl: string = environment.employeeBaseUrl;
 
   constructor(private http: HttpClient) {
     this.page = 1;

@@ -20,42 +20,42 @@ export class EmployeeListComponent implements OnInit {
   /**
    * Page title of employee list component.
    */
-  private pageTitle = "Employees";
+  public pageTitle = "Employees";
 
   /**
    * Employees  of employee list component.
    */
-  private employees: Employee[];
+  public employees: Employee[];
 
   /**
    * Search form of employee list component.
    */
-  private searchForm: FormGroup;
+  public searchForm: FormGroup;
 
   /**
    * Total records of employee list component for pagination.
    */
-  private totalRec: number;
+  public totalRec: number;
 
   /**
    * Page number for pagination
    */
-  private page: number;
+  public page: number;
   
   /**
    * Items per page for pagination
    */
-  private itemsPerPage: number;
+  public itemsPerPage: number;
 
   /**
    * Order to sort employee list
    */
-  private order: string;
+  public order: string;
 
   /**
    * Sort field of employee list component
    */
-  private sortField: string;
+  public sortField: string;
 
   constructor(private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute,
