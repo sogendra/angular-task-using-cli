@@ -11,8 +11,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import {MatDialogModule} from '@angular/material';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
