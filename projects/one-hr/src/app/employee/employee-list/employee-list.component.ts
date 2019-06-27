@@ -7,7 +7,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 /**---------------------------------------------------------------------- */
 import { Employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
-import { MatConfirmDialogService } from '../../mat-confirm-dialog/mat-confirm-dialog.service';
+import { ConfirmDialogModel, MatConfirmDialogComponent } from '../../mat-confirm-dialog/mat-confirm-dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'onehr-employeelist',
@@ -59,7 +60,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private dialogService: MatConfirmDialogService) { }
+    private dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -183,8 +184,22 @@ export class EmployeeListComponent implements OnInit {
     )
   }
 
-  public onDelete(): void {
-    this.dialogService.openConfirmDialog();
+  public onDelete(id: number, firstName: string): void {
+    const message = `Are you sure you want to delete ${firstName}'s record?`;
+
+    const dialogData = new ConfirmDialogModel("Confirm Action", message);
+
+    const dialogRef = this.dialog.open(MatConfirmDialogComponent, {
+      maxWidth: "400px",
+      data: dialogData
+    });
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if (dialogResult) {
+        console.log(id);
+        this.deleteEmployee(id);
+      }
+    });
   }
 
 }

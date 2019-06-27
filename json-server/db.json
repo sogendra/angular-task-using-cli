@@ -16,22 +16,6 @@
       "id": 8
     },
     {
-      "firstName": "Sunny",
-      "lastName": "Rajput",
-      "email": "test@test.com",
-      "phone": "1234567890",
-      "qualification": "Anpadh",
-      "designation": "associate-l1",
-      "salary": "22800",
-      "languages": [
-        "Java",
-        "Angular",
-        ".Net"
-      ],
-      "uploadFile": null,
-      "id": 9
-    },
-    {
       "firstName": "Narendra",
       "lastName": "Modi",
       "email": "test@test.com",
@@ -140,21 +124,6 @@
       "id": 22
     },
     {
-      "firstName": "Ashok",
-      "lastName": "Yadav",
-      "email": "test@test.com",
-      "phone": "1234567890",
-      "qualification": "BE",
-      "designation": "associate-l1",
-      "salary": "30,000",
-      "languages": [
-        "Angular",
-        "Java"
-      ],
-      "uploadFile": null,
-      "id": 23
-    },
-    {
       "firstName": "Vishal",
       "lastName": "Patel",
       "email": "test@test.com",
@@ -171,36 +140,19 @@
       "id": 25
     },
     {
-      "firstName": "Amitaa",
-      "lastName": "Shah",
+      "firstName": "Sunny",
+      "lastName": "Rajput",
       "email": "test@test.com",
-      "phone": "1234567890",
+      "phone": "9033333333",
       "qualification": "BE",
       "designation": "associate-l1",
       "salary": "20,000",
       "languages": [
         "Angular",
-        "Java",
-        ".Net"
+        "Java"
       ],
-      "uploadFile": "C:\\fakepath\\TestRunner.java",
+      "uploadFile": null,
       "id": 26
-    },
-    {
-      "firstName": "John",
-      "lastName": "Last",
-      "email": "test@test.com",
-      "phone": "1234567890",
-      "qualification": "BE",
-      "designation": "aaaa",
-      "salary": "22800",
-      "languages": [
-        "Angular",
-        "Java",
-        ".Net"
-      ],
-      "uploadFile": "C:\\fakepath\\TestRunner.java",
-      "id": 27
     }
   ],
   "languages": [
