@@ -27,7 +27,6 @@ import { EditEmployeeResolver } from './edit-employee/edit-employee-resolver.ser
     CommonModule,
     ReactiveFormsModule,
     EmployeeRoutingModule,
-    // NgSelectModule,
     FormsModule,
     NgMultiSelectDropDownModule,
     NgxPaginationModule

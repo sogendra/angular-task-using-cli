@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MaterialModule } from './material/material.module';
     LoaderComponent,
     LoginComponent,
     PageNotFoundComponent,
-    TopbarComponent
+    TopbarComponent,
+    MatConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { MaterialModule } from './material/material.module';
     MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MatConfirmDialogComponent]
 })
 export class AppModule { }

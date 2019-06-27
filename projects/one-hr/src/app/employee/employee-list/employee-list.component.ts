@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 /**---------------------------------------------------------------------- */
 import { Employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
+import { MatConfirmDialogService } from '../../mat-confirm-dialog/mat-confirm-dialog.service';
 
 @Component({
   selector: 'onehr-employeelist',
@@ -57,7 +58,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private dialogService: MatConfirmDialogService) { }
 
   ngOnInit() {
 
@@ -179,6 +181,10 @@ export class EmployeeListComponent implements OnInit {
         this.employees = data;
       }
     )
+  }
+
+  public onDelete(): void {
+    this.dialogService.openConfirmDialog();
   }
 
 }
