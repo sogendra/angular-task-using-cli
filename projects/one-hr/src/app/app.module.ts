@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    NgxErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
