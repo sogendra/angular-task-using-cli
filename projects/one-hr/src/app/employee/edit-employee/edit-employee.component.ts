@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LanguageService } from '../language-dropdown/language.service';
 import { Employee, EmployeeResolved } from '../employee.model';
 import { EmployeeService } from '../employee.service';
+import { noValidator } from '../validation';
 
 @Component({
   selector: 'onehr-edit-employee',
@@ -57,10 +58,10 @@ export class EditEmployeeComponent implements OnInit {
       firstName: ['', [ Validators.required,Validators.minLength(3) ]],
       lastName: ['', [ Validators.required,Validators.minLength(3) ]],
       email: ['',[Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), noValidator]],
       qualification: [''],
       designation: [''],
-      salary: [''],
+      salary: ['',noValidator],
       languages:[''],
       uploadFile: [null]
     });

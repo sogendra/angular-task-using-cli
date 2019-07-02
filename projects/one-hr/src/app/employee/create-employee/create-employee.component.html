@@ -64,6 +64,15 @@
             <span *ngIf="employeeForm.get('phone').errors?.required">
               Please enter your phone number.
             </span>
+            <span *ngIf="employeeForm.get('phone').errors?.no">
+              Please enter number.
+            </span>
+            <span *ngIf="employeeForm.get('phone').errors?.maxlength">
+              Phone number should have 10 number.
+            </span>
+            <span *ngIf="employeeForm.get('phone').errors?.minlength">
+              Phone number should have 10 number.
+            </span>
           </span>
         </div>
       </div>
@@ -86,7 +95,13 @@
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label" for="salaryId">Salary</label>
         <div class="col-md-8">
-          <input class="form-control" id="salaryId" type="text" placeholder="Salary" formControlName="salary" />
+          <input class="form-control" id="salaryId" type="text" placeholder="Salary" formControlName="salary" [ngClass]="{'is-invalid': (employeeForm.get('salary').touched || employeeForm.get('salary').dirty) 
+          && !employeeForm.get('salary').valid }"/>
+          <span class="invalid-feedback">
+            <span *ngIf="employeeForm.get('salary').errors?.no">
+              Please enter number.
+            </span>
+          </span>
         </div>
       </div>
 
