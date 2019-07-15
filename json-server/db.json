@@ -153,6 +153,22 @@
       ],
       "uploadFile": null,
       "id": 26
+    },
+    {
+      "firstName": "Aaaa",
+      "lastName": "Aaaa",
+      "email": "akjd@gmail.com",
+      "phone": "5453218421",
+      "qualification": "BE",
+      "designation": "dwd",
+      "salary": "12312",
+      "languages": [
+        "Angular",
+        "Java",
+        ".Net"
+      ],
+      "uploadFile": null,
+      "id": 27
     }
   ],
   "languages": [
