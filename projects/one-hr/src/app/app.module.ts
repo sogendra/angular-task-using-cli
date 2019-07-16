@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
+import { EmployeeMvpModule } from './employee-mvp/employee-mvp.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxErrorsModule } from '@ultimate/ngxerrors';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgxErrorsModule
+    NgxErrorsModule,
+    EmployeeMvpModule
   ],
   providers: [],
   bootstrap: [AppComponent],

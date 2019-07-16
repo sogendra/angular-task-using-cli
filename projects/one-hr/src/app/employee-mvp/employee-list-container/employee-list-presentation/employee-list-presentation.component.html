@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table mb-0" *ngIf="employees && employees.length">
+        <thead>
+          <tr>
+            <th>First lastName</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Designation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td><a [routerLink]="['/emp-mvp', employee.id, 'detail']">{{employee.firstName}}</a></td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.designation}}</td>
+            <td>
+              <button class="btn btn-outline-primary btn-sm" [routerLink]="['/emp-mvp', employee.id, 'edit']"
+                [queryParams]="{page: page}">
+                Edit
+              </button>&nbsp;&nbsp;
+              <!-- <button class="btn btn-outline-primary btn-sm" (click)="onDelete(employee.id)">Delete
+              </button> -->
+              <button class="btn btn-outline-primary btn-sm" (click)="onDelete(employee.id)">Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

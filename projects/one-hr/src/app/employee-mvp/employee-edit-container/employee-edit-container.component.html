@@ -1,0 +1,3 @@
+<app-employee-edit-presentation [employee]="employee$ | async" (update)="updateEmployee($event)"></app-employee-edit-presentation>
+
+<p>{{employee$ | async| json}}</p>
