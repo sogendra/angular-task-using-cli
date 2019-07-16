@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { EmployeeListService } from '../../employee-list.service';
 import { Employee } from '../../employee.model';
 
 @Component({
@@ -10,11 +9,12 @@ import { Employee } from '../../employee.model';
 export class EmployeeListPresentationComponent implements OnInit {
 
   public pageTitle = "Employees";
+
   @Input() public employees: Employee[];
 
   @Output() public deleteEmployee = new EventEmitter();
 
-  constructor(private employeeService: EmployeeListService) { }
+  constructor() { }
 
   ngOnInit() {
   }

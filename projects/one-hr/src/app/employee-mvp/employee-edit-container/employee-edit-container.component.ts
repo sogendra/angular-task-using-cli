@@ -12,6 +12,7 @@ import { Employee } from '../employee.model';
 export class EmployeeEditContainerComponent implements OnInit {
 
   private id: number;
+  public employee$: Observable<Employee> = this.employeeListService.getEmployee(26);
 
   constructor(private employeeListService: EmployeeListService,
               private activatedRoute: ActivatedRoute,
@@ -30,8 +31,6 @@ export class EmployeeEditContainerComponent implements OnInit {
     //   }
     // );
   }
-
-  public employee$: Observable<Employee> = this.employeeListService.getEmployee(26);
 
   public updateEmployee(employee): void{
     this.employeeListService.updateEmployee(employee.employeeFormValue,employee.empId).subscribe(
