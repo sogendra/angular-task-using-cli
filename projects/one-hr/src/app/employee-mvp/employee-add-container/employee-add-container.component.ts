@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeListService } from '../employee-list.service';
 import { Observable } from 'rxjs';
 import { Language } from '../employee.model';
 import { Router } from '@angular/router';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-add-container',
@@ -14,7 +14,7 @@ export class EmployeeAddContainerComponent implements OnInit {
   public dropDownListData$ : Observable<Language[]> = this.employeeService.getAllLanguages();
   // public dropDownListData : Language[];
 
-  constructor(private employeeService: EmployeeListService,
+  constructor(private employeeService: EmployeeService,
               private router: Router) { }
 
   ngOnInit() {

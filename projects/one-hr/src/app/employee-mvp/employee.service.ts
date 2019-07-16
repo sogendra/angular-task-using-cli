@@ -7,7 +7,7 @@ import { Employee, Language } from './employee.model';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeListService {
+export class EmployeeService {
 
   private languageUrl: string = environment.languagesBaseUrl;
   private baseUrl: string = environment.employeeBaseUrl;

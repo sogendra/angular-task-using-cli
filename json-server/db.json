@@ -238,13 +238,23 @@
     },
     {
       "firstName": "First",
-      "lastName": "Shah",
+      "lastName": "abcd",
       "email": "test@test.com",
       "phone": "1234567890",
       "qualification": "BE",
       "designation": "associate-l1",
-      "salary": "20",
-      "languages": "",
+      "salary": "228000",
+      "languages": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ],
       "uploadFile": null,
       "id": 34
     }
