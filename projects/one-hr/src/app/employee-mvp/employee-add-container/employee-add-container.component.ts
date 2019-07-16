@@ -12,11 +12,13 @@ import { Router } from '@angular/router';
 export class EmployeeAddContainerComponent implements OnInit {
 
   public dropDownListData$ : Observable<Language[]> = this.employeeService.getAllLanguages();
+  // public dropDownListData : Language[];
 
   constructor(private employeeService: EmployeeListService,
               private router: Router) { }
 
   ngOnInit() {
+    // this.languagesData();
   }
 
   public createEmployee(employee): void {
@@ -27,5 +29,15 @@ export class EmployeeAddContainerComponent implements OnInit {
       }
     );
   }
+
+  // private languagesData(): void {
+  //   this.employeeService.getAllLanguages().subscribe(data => {
+  //     const arry: any = [];
+  //     for (let d of data) {
+  //       arry.push(d.language);
+  //     }
+  //     this.dropDownListData = arry;
+  //   });
+  // }
 
 }
