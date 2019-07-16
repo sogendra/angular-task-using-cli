@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeListService } from '../employee-list.service';
 import { Observable } from 'rxjs';
-import { Employee } from '../../employee/employee.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Employee } from '../employee.model';
 
 @Component({
   selector: 'app-employee-edit-container',
@@ -14,7 +14,8 @@ export class EmployeeEditContainerComponent implements OnInit {
   private id: number;
 
   constructor(private employeeListService: EmployeeListService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   
 
@@ -30,15 +31,13 @@ export class EmployeeEditContainerComponent implements OnInit {
     // );
   }
 
-  public employee$: Observable<Employee> = this.employeeListService.getEmployee(34);
+  public employee$: Observable<Employee> = this.employeeListService.getEmployee(26);
 
   public updateEmployee(employee): void{
     this.employeeListService.updateEmployee(employee.employeeFormValue,employee.empId).subscribe(
       () => {
         console.log("Update container");
-        
-        // this.saveClicked = true;
-        // this.router.navigate(['/emp']);
+        this.router.navigate(['/emp']);
       }
     );
   }

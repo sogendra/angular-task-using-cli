@@ -1,6 +1,6 @@
-import { Employee } from '../../employee/employee.model';
 import { Injectable } from '@angular/core';
 import { Adapter } from 'projects/core/src/lib/adapter/adapter';
+import { Employee } from '../employee.model';
 
 @Injectable({
     providedIn: 'root'

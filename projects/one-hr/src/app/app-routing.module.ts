@@ -11,6 +11,7 @@ import { LoaderInterceptor } from './loader/loader.interceptor';
 import { EmployeeListContainerComponent } from './employee-mvp/employee-list-container/employee-list-container.component';
 import { EmployeeEditContainerComponent } from './employee-mvp/employee-edit-container/employee-edit-container.component';
 import { EmployeeDetailContainerComponent } from './employee-mvp/employee-detail-container/employee-detail-container.component';
+import { EmployeeAddContainerComponent } from './employee-mvp/employee-add-container/employee-add-container.component';
 
 const appRoutes: Routes = [
     {
@@ -20,27 +21,32 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent
-    },
+    }/* ,
     {
         path: 'emp',
         canActivate: [AuthGuard],
         loadChildren: './employee/employee.module#EmployeeModule'
-    },
+    }, */
+    ,
     {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
     },
     {
-        path: 'emp-mvp',
+        path: 'emp',
         component: EmployeeListContainerComponent
     },
     {
-      path:'emp-mvp/:id/edit',
+        path: 'emp/add',
+        component: EmployeeAddContainerComponent
+    },
+    {
+      path:'emp/:id/edit',
       component: EmployeeEditContainerComponent
     },
     {
-        path:'emp-mvp/:id/detail',
+        path:'emp/:id/detail',
         component: EmployeeDetailContainerComponent
       },
     {

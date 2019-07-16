@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Employee } from '../employee/employee.model';
+import { Employee, Language } from './employee.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeListService {
 
+  private languageUrl: string = environment.languagesBaseUrl;
   private baseUrl: string = environment.employeeBaseUrl;
 
   constructor(private http: HttpClient) { }
@@ -50,6 +51,13 @@ export class EmployeeListService {
    */
   public updateEmployee(employee: Employee, id: number): Observable<void> {
     return this.http.put<void>(`${this.baseUrl}/${id}`, employee);
+  }
+
+  /**
+     * This method is use to fetch all languages from server using HttpClient.
+     */
+    public getAllLanguages(): Observable<Language[]> {
+      return this.http.get<Language[]>(this.languageUrl);
   }
 
 }

@@ -45,3 +45,9 @@ export class EmployeeResolved {
   employee: Employee;
   error?: any;
 }
+
+
+export class Language {
+  id: number;
+  language: string;
+}

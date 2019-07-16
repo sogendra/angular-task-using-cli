@@ -18,13 +18,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let employee of employees">
-            <td><a [routerLink]="['/emp-mvp', employee.id, 'detail']">{{employee.firstName}}</a></td>
+            <td><a [routerLink]="['/emp', employee.id, 'detail']">{{employee.firstName}}</a></td>
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.phone}}</td>
             <td>{{employee.designation}}</td>
             <td>
-              <button class="btn btn-outline-primary btn-sm" [routerLink]="['/emp-mvp', employee.id, 'edit']"
+              <button class="btn btn-outline-primary btn-sm" [routerLink]="['/emp', employee.id, 'edit']"
                 [queryParams]="{page: page}">
                 Edit
               </button>&nbsp;&nbsp;

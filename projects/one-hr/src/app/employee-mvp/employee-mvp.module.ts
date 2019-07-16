@@ -10,6 +10,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeDetailContainerComponent } from './employee-detail-container/employee-detail-container.component';
 import { EmployeeDetailPresentationComponent } from './employee-detail-container/employee-detail-presentation/employee-detail-presentation.component';
+import { EmployeeAddContainerComponent } from './employee-add-container/employee-add-container.component';
+import { EmployeeAddPresentationComponent } from './employee-add-container/employee-add-presentation/employee-add-presentation.component';
 
 // const routes: Routes = [
 //   {
@@ -23,7 +25,15 @@ import { EmployeeDetailPresentationComponent } from './employee-detail-container
 // ];
 
 @NgModule({
-  declarations: [EmployeeListContainerComponent, EmployeeListPresentationComponent, EmployeeEditContainerComponent, EmployeeEditPresentationComponent, EmployeeDetailContainerComponent, EmployeeDetailPresentationComponent],
+  declarations: [
+    EmployeeListContainerComponent, 
+    EmployeeListPresentationComponent, 
+    EmployeeEditContainerComponent, 
+    EmployeeEditPresentationComponent, 
+    EmployeeDetailContainerComponent, 
+    EmployeeDetailPresentationComponent, 
+    EmployeeAddContainerComponent, 
+    EmployeeAddPresentationComponent],
   imports: [
     CommonModule,
     RouterModule,

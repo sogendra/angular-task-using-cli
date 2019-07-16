@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Employee } from '../../../employee/employee.model';
 import { EmployeeEditPresenterService } from '../employee-edit-presenter/employee-edit-presenter.service';
+import { Employee } from '../../employee.model';
 
 @Component({
   selector: 'app-employee-edit-presentation',

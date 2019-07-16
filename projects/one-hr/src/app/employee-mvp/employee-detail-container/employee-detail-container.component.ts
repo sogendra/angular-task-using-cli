@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmployeeListService } from '../employee-list.service';
 import { Observable } from 'rxjs';
-import { Employee } from '../../employee/employee.model';
+import { Employee } from '../employee.model';
 
 @Component({
   selector: 'app-employee-detail-container',
@@ -23,5 +23,5 @@ export class EmployeeDetailContainerComponent implements OnInit {
     console.log(this.id);
   }
 
-  public employee$: Observable<Employee> = this.employeeListService.getEmployee(34);
+  public employee$: Observable<Employee> = this.employeeListService.getEmployee(26);
 }
