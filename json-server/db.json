@@ -219,44 +219,6 @@
       ],
       "uploadFile": null,
       "id": 32
-    },
-    {
-      "firstName": "john",
-      "lastName": "Last",
-      "email": "test@test.com",
-      "phone": "1234567890",
-      "qualification": "BE",
-      "designation": "associate-l1",
-      "salary": "20",
-      "languages": [
-        {
-          "id": 1
-        }
-      ],
-      "uploadFile": null,
-      "id": 33
-    },
-    {
-      "firstName": "First",
-      "lastName": "abcd",
-      "email": "test@test.com",
-      "phone": "1234567890",
-      "qualification": "BE",
-      "designation": "associate-l1",
-      "salary": "228000",
-      "languages": [
-        {
-          "id": 1
-        },
-        {
-          "id": 2
-        },
-        {
-          "id": 3
-        }
-      ],
-      "uploadFile": null,
-      "id": 34
     }
   ],
   "languages": [

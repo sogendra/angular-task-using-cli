@@ -32,7 +32,6 @@ export class EmployeeService {
    */
   public getEmployee(id: number): Observable<Employee> {
     console.log("Service: "+id);
-    
     return this.http.get<Employee>(`${this.baseUrl}/${id}`);
   }
 

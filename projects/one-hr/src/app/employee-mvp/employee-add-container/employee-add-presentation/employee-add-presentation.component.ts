@@ -19,20 +19,17 @@ export class EmployeeAddPresentationComponent implements OnInit {
 
   @Output() public saveEmployee = new EventEmitter();
 
-  constructor(private employeeEditPresenter: EmployeeEditPresenterService) { 
-    
-  }
+  constructor(private employeeEditPresenter: EmployeeEditPresenterService) {  }
 
   ngOnInit() {
     this.employeeForm = this.employeeEditPresenter.buildForm();
   }
 
-  public onFileChange(event){
-    const uploadFile = this.employeeForm.get('uploadFile');
-    uploadFile.setErrors(this.employeeEditPresenter.onFileChange(event));
+  public onFileChange(event): void{
+    this.employeeEditPresenter.onFileChange(event);
   }
 
-  public createEmployee() {
+  public createEmployee(): void {
     this.saveEmployee.emit(this.employeeForm.value);
   }
 

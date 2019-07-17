@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { Employee } from '../../employee.model';
 
 function noValidator(control: AbstractControl): {[key: string]: boolean} | null{
 
@@ -14,10 +15,12 @@ function noValidator(control: AbstractControl): {[key: string]: boolean} | null{
 })
 export class EmployeeEditPresenterService {
 
+  public employeeForm: FormGroup;
+
   constructor(private formBuilder: FormBuilder) { }
 
   public buildForm(): FormGroup {
-    return this.formBuilder.group({
+    this.employeeForm = this.formBuilder.group({
       firstName: ['', [ Validators.required,Validators.minLength(3) ]],
       lastName: ['', [ Validators.required,Validators.minLength(3) ]],
       email: ['',[Validators.required, Validators.email]],
@@ -28,12 +31,19 @@ export class EmployeeEditPresenterService {
       languages:[''],
       uploadFile: [null]
     });
+
+    return this.employeeForm;
   }
 
-  public onFileChange(event): any {
+  public onFileChange(event): void {
     if (event.target.files && event.target.files[0].size/1024/1024 > 2) {
-      return {'uploadFileValidation': true};
+      const uploadFile = this.employeeForm.get('uploadFile');
+      uploadFile.setErrors({'uploadFileValidation': true});
     }
   }
+
+public setEmployeeFormData(employee: Employee): void {
+  this.employeeForm.patchValue(employee);  
+}
   
 }

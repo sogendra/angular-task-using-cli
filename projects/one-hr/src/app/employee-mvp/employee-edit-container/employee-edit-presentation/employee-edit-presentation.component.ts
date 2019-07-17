@@ -23,7 +23,20 @@ export class EmployeeEditPresentationComponent implements OnInit {
   /**
    * Employee  of edit employee component.
    */
-  @Input() public employee: Employee;
+  public _employee: Employee;
+
+  @Input() public set employee(value : Employee) {
+    this._employee = value;
+    if (value) {
+      this.employeeEditPresenter.setEmployeeFormData(this.employee);
+    }
+  }
+  
+  
+  public get employee() : Employee {
+    return this._employee;
+  }
+  
 
   /**
    * Save clicked boolean used for helping in create employe guard to nevigate on save clicked.
@@ -41,8 +54,7 @@ export class EmployeeEditPresentationComponent implements OnInit {
 
   ngOnInit() {
     this.employeeForm = this.employeeEditPresenter.buildForm();
-    console.log(this.employee);
-    
+    console.log(this._employee);
   }
 
   /**
@@ -50,17 +62,20 @@ export class EmployeeEditPresentationComponent implements OnInit {
    * @param event 
    */
   private onFileChange(event): void {
-    const uploadFile = this.employeeForm.get('uploadFile');
-    uploadFile.setErrors(this.employeeEditPresenter.onFileChange(event));
+    this.employeeEditPresenter.onFileChange(event);
   }
 
  
   public updateEmployee() {
-
     this.update.emit({
       employeeFormValue: this.employeeForm.value,
-      empId: this.employee.id
+      empId: this._employee.id
     });
   }
+
+  public setFormData(): void {
+    this.employeeEditPresenter.setEmployeeFormData(this._employee);
+  }
+
 
 }

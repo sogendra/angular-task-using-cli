@@ -22,14 +22,16 @@ export class EmployeeEditContainerComponent implements OnInit {
 
   ngOnInit() {
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
+    console.log("container: "+this.id);
     
-    // this.employeeListService.getEmployee(this.id).subscribe(
-    //   data => {
-    //     console.log(data);
-        
-    //   }
-    // );
+    this.employeeService.getEmployee(this.id).subscribe(
+      data => {
+        console.log("Data:");
+        console.log(data);
+        debugger;
+      }
+      
+    );
   }
 
   public updateEmployee(employee): void{
