@@ -12,32 +12,20 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeEditContainerComponent implements OnInit {
 
   private id: number;
-  public employee$: Observable<Employee> = this.employeeService.getEmployee(26);
+  public employee$: Observable<Employee>;
 
   constructor(private employeeService: EmployeeService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }
 
-  
-
   ngOnInit() {
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
-    console.log("container: "+this.id);
-    
-    this.employeeService.getEmployee(this.id).subscribe(
-      data => {
-        console.log("Data:");
-        console.log(data);
-        debugger;
-      }
-      
-    );
+    this.employee$ = this.employeeService.getEmployee(this.id);
   }
 
-  public updateEmployee(employee): void{
+  public updateEmployee(employee): void {
     this.employeeService.updateEmployee(employee.employeeFormValue,employee.empId).subscribe(
       () => {
-        console.log("Update container");
         this.router.navigate(['/emp']);
       }
     );

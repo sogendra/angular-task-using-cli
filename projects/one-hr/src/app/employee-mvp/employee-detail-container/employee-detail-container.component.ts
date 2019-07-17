@@ -12,6 +12,7 @@ import { Employee } from '../employee.model';
 export class EmployeeDetailContainerComponent implements OnInit {
 
   private id: number;
+  public employee$: Observable<Employee>;
 
   constructor(private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute) { 
@@ -20,8 +21,8 @@ export class EmployeeDetailContainerComponent implements OnInit {
 
   ngOnInit() {
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
+    this.employee$ = this.employeeService.getEmployee(this.id);
   }
 
-  public employee$: Observable<Employee> = this.employeeService.getEmployee(26);
+  
 }
